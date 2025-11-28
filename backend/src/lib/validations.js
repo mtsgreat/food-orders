@@ -12,3 +12,13 @@ export const loginSchema = z.object({
   email: z.string().min(1, "Email is required"),
   password: z.string().min(1,"Password is required")
 })
+
+
+
+export const orderSchema = z.object({
+  customerName: z.string().min(1, "Customer name is required"),
+  // orderPassword: z.string().min(1, "Order password is required"),
+});
+
+
+
