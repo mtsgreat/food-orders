@@ -16,9 +16,21 @@ export const loginSchema = z.object({
 
 
 export const orderSchema = z.object({
-  customerName: z.string().min(1, "Customer name is required"),
-  // orderPassword: z.string().min(1, "Order password is required"),
+  customer_id: z.int().min(1, "Customer id  is required"),
 });
+
+
+export const customerSchema = z.object({
+  name: z.string().min(1, "name is required"),
+});
+
+
+export const productSchema = z.object({
+  name: z.string().min(1, "name is required"),
+  price: z.number().min(1, "price is required"),
+  description: z.string().min(1, "description is required"),
+});
+
 
 
 
