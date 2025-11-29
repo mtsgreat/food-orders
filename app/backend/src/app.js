@@ -5,8 +5,15 @@ import orderRoutes from './routes/orders.js'
 import customerRoutes from './routes/customer.js'
 import productRoutes from './routes/product.js'
 import fastifyJwt from '@fastify/jwt'
+import cors from '@fastify/cors'
 
 const app = fastify({ logger: true })
+
+// HABILITAR CORS
+app.register(cors, {
+  origin: '*', // libera para qualquer front-end
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+})
 
 // ✅ registra o plugin JWT na instância correta
 app.register(fastifyJwt, {

@@ -22,7 +22,10 @@ export const login = async (request, reply) => {
     return reply.code(401).send({ message: 'Invalid credentials' })
   }
 
-  const token = await reply.jwtSign({ id: user.id, email: user.email })
+    const token = await reply.jwtSign(
+    { id: user.id, email: user.email },
+    { expiresIn: "3m" }  // ⬅⯭ validade do token 1h/12h/7d
+  )
 
   return { token }
 }
