@@ -1,6 +1,12 @@
-<template>
-  <div>
-    <NuxtRouteAnnouncer />
-    <NuxtWelcome />
-  </div>
+<template >
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>
+
+
+<style>
+html {
+  @apply font-sans;
+}
+</style>
